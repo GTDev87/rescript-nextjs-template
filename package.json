@@ -4,7 +4,8 @@
   "author": "Patrick Ecker <ryyppy@users.noreply.github.com>",
   "license": "Apache-2.0",
   "engine": {
-    "node": "16.x.x"
+    "node": "16.x.x",
+    "bun": "1.x.x"
   },
   "dependencies": {
     "next": "10.2.3",

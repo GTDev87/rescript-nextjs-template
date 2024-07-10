@@ -11,16 +11,22 @@ This is a NextJS based template with following setup:
 
 ## Development
 
+Install Bun
+
+```
+brew install oven-sh/bun/bun # for macOS and Linux
+```
+
 Run ReScript in dev mode:
 
 ```
-npm run res:start
+bun run res:start
 ```
 
 In another tab, run the Next dev server:
 
 ```
-npm run dev
+bun run dev
 ```
 
 ## Useful commands

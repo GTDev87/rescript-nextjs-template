@@ -4,32 +4,32 @@
   "author": "Patrick Ecker <ryyppy@users.noreply.github.com>",
   "license": "Apache-2.0",
   "engine": {
-    "node": "16.x.x",
+    "node": "20.x.x",
     "bun": "1.x.x"
   },
   "dependencies": {
     "next": "10.2.3",
-    "react": "17.0.1",
+    "react": "18.3.1",
     "react-dom": "17.0.1"
   },
   "repository": "https://github.com/ryyppy/rescript-nextjs-template",
   "scripts": {
-    "dev": "next",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
     "debug": "NODE_OPTIONS='--inspect' next",
     "build": "rescript && next build",
     "now-build": "rescript && next build",
     "export": "next export",
-    "start": "next start -p $PORT",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider next start -p $PORT",
     "res:build": "rescript",
     "res:clean": "rescript clean",
     "res:start": "rescript build -w"
   },
   "devDependencies": {
     "next-transpile-modules": "7.1.2",
-    "@rescript/react": "0.10.3",
-    "gentype": "4.1",
+    "@rescript/react": "0.12.2",
+    "gentype": "~4.1.0",
     "autoprefixer": "10.1.0",
-    "rescript": "9.1",
+    "rescript": "11.1.2",
     "cssnano": "5.0.5",
     "postcss": "8.2.15",
     "postcss-cli": "8.3.1",

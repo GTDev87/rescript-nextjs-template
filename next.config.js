@@ -6,7 +6,7 @@ const withTM = require("next-transpile-modules")(transpileModules);
 
 const isWebpack5 = true;
 const config = {
-  target: "serverless",
+  // target: "serverless",
   // swcMinify: true,
   pageExtensions: ["jsx", "js"],
   env: {
@@ -39,7 +39,6 @@ const config = {
     }
     return config
   },
-  webpack5: isWebpack5
 };
 
 module.exports = withTM(config);

@@ -8,6 +8,7 @@ function MainLayout$Navigation(props) {
               children: [
                 JsxRuntime.jsx(Link, {
                       href: "/",
+                      legacyBehavior: true,
                       children: JsxRuntime.jsxs("a", {
                             children: [
                               JsxRuntime.jsx("img", {
@@ -32,6 +33,7 @@ function MainLayout$Navigation(props) {
                       children: [
                         JsxRuntime.jsx(Link, {
                               href: "/",
+                              legacyBehavior: true,
                               children: JsxRuntime.jsx("a", {
                                     children: "Home",
                                     className: "px-3"
@@ -39,6 +41,7 @@ function MainLayout$Navigation(props) {
                             }),
                         JsxRuntime.jsx(Link, {
                               href: "/examples",
+                              legacyBehavior: true,
                               children: JsxRuntime.jsx("a", {
                                     children: "Examples",
                                     className: "px-3"

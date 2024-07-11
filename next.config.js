@@ -1,7 +1,7 @@
-const bsconfig = require('./bsconfig.json');
+const rescript = require('./rescript.json');
 const fs = require("fs");
 
-const transpileModules = ["rescript"].concat(bsconfig["bs-dependencies"]);
+const transpileModules = ["rescript"].concat(rescript["bs-dependencies"]);
 const withTM = require("next-transpile-modules")(transpileModules);
 
 const isWebpack5 = true;

@@ -14,7 +14,7 @@
   },
   "repository": "https://github.com/ryyppy/rescript-nextjs-template",
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
+    "dev": "PORT=3000 NODE_OPTIONS=--openssl-legacy-provider next",
     "debug": "NODE_OPTIONS='--inspect' next",
     "build": "rescript && next build",
     "now-build": "rescript && next build",
@@ -25,7 +25,7 @@
     "res:start": "rescript build -w"
   },
   "devDependencies": {
-    "next-transpile-modules": "7.1.2",
+    "next-transpile-modules": "10.0.1",
     "@rescript/react": "0.12.2",
     "gentype": "~4.1.0",
     "autoprefixer": "10.1.0",

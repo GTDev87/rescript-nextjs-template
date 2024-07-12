@@ -11,22 +11,22 @@ This is a NextJS based template with following setup:
 
 ## Development
 
-Install Bun
+Install Pnpm
 
 ```
-brew install oven-sh/bun/bun # for macOS and Linux
+brew install pnpm
 ```
 
 Run ReScript in dev mode:
 
 ```
-bun run res:start
+pnpm run res:start
 ```
 
 In another tab, run the Next dev server:
 
 ```
-bun run dev
+pnpm run dev
 ```
 
 ## Useful commands

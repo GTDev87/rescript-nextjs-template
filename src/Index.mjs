@@ -9,7 +9,7 @@ function Index$P(props) {
             });
 }
 
-function $$default() {
+function $$default(param) {
   return JsxRuntime.jsxs("div", {
               children: [
                 JsxRuntime.jsx("h1", {

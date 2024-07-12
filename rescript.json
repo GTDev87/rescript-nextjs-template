@@ -18,7 +18,7 @@
     }
   ],
   "package-specs": {
-    "module": "es6",
+    "module": "esmodule",
     "in-source": true
   },
   "suffix": ".mjs",
@@ -38,5 +38,6 @@
     "templateTagReturnType": "ApolloClient.GraphQL_PPX.templateTagReturnType",
     "templateTagImport": "gql",
     "templateTagLocation": "@apollo/client"
-  }
+  },
+  "uncurried": false
 }

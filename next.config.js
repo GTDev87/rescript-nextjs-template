@@ -4,6 +4,14 @@ const fs = require("fs");
 const transpileModules = ["rescript"].concat(rescript["bs-dependencies"]);
 const withTM = require("next-transpile-modules")(transpileModules);
 
+
+const {
+  createVanillaExtractPlugin
+} = require('@vanilla-extract/next-plugin');
+
+const withVanillaExtract = createVanillaExtractPlugin();
+
+
 const isWebpack5 = true;
 const config = {
   // target: "serverless",
@@ -41,4 +49,4 @@ const config = {
   },
 };
 
-module.exports = withTM(config);
+module.exports = withVanillaExtract(withTM(config));

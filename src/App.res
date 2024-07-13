@@ -1,7 +1,12 @@
+%%raw("import {css} from 'astroturf';")
 // This type is based on the getInitialProps return value.
 // If you are using getServerSideProps or getStaticProps, you probably
 // will never need this
 // See https://nextjs.org/docs/advanced-features/custom-app
+
+let h1Class: Astroturf.rootClass = %raw("css`
+  @apply font-bold;
+`");
 type pageProps
 
 module PageComponent = {
@@ -28,7 +33,7 @@ let default = (props: props): React.element => {
   switch router.route {
   | "/examples" =>
     <MainLayout>
-      <h1 className="font-bold"> {React.string("Examples Section")} </h1> <div> content </div>
+      <h1 className=h1Class> {React.string("Examples Section")} </h1> <div> content </div>
     </MainLayout>
   | _ => <MainLayout> content </MainLayout>
   }

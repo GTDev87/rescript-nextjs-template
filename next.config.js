@@ -4,14 +4,6 @@ const fs = require("fs");
 const transpileModules = ["rescript"].concat(rescript["bs-dependencies"]);
 const withTM = require("next-transpile-modules")(transpileModules);
 
-
-const {
-  createVanillaExtractPlugin
-} = require('@vanilla-extract/next-plugin');
-
-const withVanillaExtract = createVanillaExtractPlugin();
-
-
 const isWebpack5 = true;
 const config = {
   // target: "serverless",
@@ -37,7 +29,7 @@ const config = {
       // correctly detected within our src/ folder
       config.module.rules.push({
         test: /\.m?js$/,
-        use: options.defaultLoaders.babel,
+        use: [options.defaultLoaders.babel, 'astroturf/loader'],
         exclude: /node_modules/,
         type: "javascript/auto",
         resolve: {
@@ -49,4 +41,4 @@ const config = {
   },
 };
 
-module.exports = withVanillaExtract(withTM(config));
+module.exports = withTM(config);

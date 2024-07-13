@@ -5,6 +5,13 @@ import * as MainLayout from "./layouts/MainLayout.mjs";
 import * as Router from "next/router";
 import * as JsxRuntime from "react/jsx-runtime";
 
+import {css} from 'astroturf';
+;
+
+var h1Class = (css`
+  @apply font-bold;
+`);
+
 function $$default(props) {
   var router = Router.useRouter();
   var content = React.createElement(props.Component, props.pageProps);
@@ -14,7 +21,7 @@ function $$default(props) {
                 children: [
                   JsxRuntime.jsx("h1", {
                         children: "Examples Section",
-                        className: "font-bold"
+                        className: h1Class
                       }),
                   JsxRuntime.jsx("div", {
                         children: content
@@ -31,4 +38,4 @@ function $$default(props) {
 export {
   $$default as default,
 }
-/* react Not a pure module */
+/*  Not a pure module */

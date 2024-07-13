@@ -3,6 +3,53 @@
 import Link from "next/link";
 import * as JsxRuntime from "react/jsx-runtime";
 
+import {css} from 'astroturf';
+;
+
+var navClass = (css`
+  @apply p-2 h-12 flex border-b border-gray-200 justify-between items-center text-sm;
+`);
+
+var aClass = (css`
+  @apply flex items-center w-1/3;
+`);
+
+var imgClass = (css`
+  @apply w-5;
+`);
+
+var spanClass = (css`
+  @apply text-xl ml-2 align-middle font-semibold;
+`);
+
+var innerSpanClass = (css`
+  @apply text-orange-800;
+`);
+
+var divClass = (css`
+  @apply flex w-2/3 justify-end;
+`);
+
+var innerAClass = (css`
+  @apply px-3 font-bold;
+`);
+
+var legacyAClass = (css`
+  @apply px-3;
+`);
+
+var mainDivClass = (css`
+  @apply flex lg:justify-center;
+`);
+
+var mainDivDivClass = (css`
+  @apply max-w-5xl w-full lg:w-3/4 text-gray-900 text-base;
+`);
+
+var mainDivDivMainClass = (css`
+  @apply mt-4 mx-4;
+`);
+
 function MainLayout$Navigation(props) {
   return JsxRuntime.jsxs("nav", {
               children: [
@@ -12,7 +59,7 @@ function MainLayout$Navigation(props) {
                       children: JsxRuntime.jsxs("a", {
                             children: [
                               JsxRuntime.jsx("img", {
-                                    className: "w-5",
+                                    className: imgClass,
                                     src: "/static/zeit-black-triangle.svg"
                                   }),
                               JsxRuntime.jsxs("span", {
@@ -20,13 +67,13 @@ function MainLayout$Navigation(props) {
                                       "Next",
                                       JsxRuntime.jsx("span", {
                                             children: " + ReScript",
-                                            className: "text-orange-800"
+                                            className: innerSpanClass
                                           })
                                     ],
-                                    className: "text-xl ml-2 align-middle font-semibold"
+                                    className: spanClass
                                   })
                             ],
-                            className: "flex items-center w-1/3"
+                            className: aClass
                           })
                     }),
                 JsxRuntime.jsxs("div", {
@@ -36,7 +83,7 @@ function MainLayout$Navigation(props) {
                               legacyBehavior: true,
                               children: JsxRuntime.jsx("a", {
                                     children: "Home",
-                                    className: "px-3"
+                                    className: legacyAClass
                                   })
                             }),
                         JsxRuntime.jsx(Link, {
@@ -44,20 +91,20 @@ function MainLayout$Navigation(props) {
                               legacyBehavior: true,
                               children: JsxRuntime.jsx("a", {
                                     children: "Examples",
-                                    className: "px-3"
+                                    className: legacyAClass
                                   })
                             }),
                         JsxRuntime.jsx("a", {
                               children: "Github",
-                              className: "px-3 font-bold",
+                              className: innerAClass,
                               href: "https://github.com/ryyppy/nextjs-default",
                               target: "_blank"
                             })
                       ],
-                      className: "flex w-2/3 justify-end"
+                      className: divClass
                     })
               ],
-              className: "p-2 h-12 flex border-b border-gray-200 justify-between items-center text-sm"
+              className: navClass
             });
 }
 
@@ -71,12 +118,12 @@ function MainLayout(props) {
                       JsxRuntime.jsx(MainLayout$Navigation, {}),
                       JsxRuntime.jsx("main", {
                             children: props.children,
-                            className: "mt-4 mx-4"
+                            className: mainDivDivMainClass
                           })
                     ],
-                    className: "max-w-5xl w-full lg:w-3/4 text-gray-900 font-base"
+                    className: mainDivDivClass
                   }),
-              className: "flex lg:justify-center",
+              className: mainDivClass,
               style: minWidth
             });
 }
@@ -86,4 +133,4 @@ var make = MainLayout;
 export {
   make ,
 }
-/* next/link Not a pure module */
+/*  Not a pure module */

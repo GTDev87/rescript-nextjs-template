@@ -16,23 +16,20 @@ function $$default(props) {
   var router = Router.useRouter();
   var content = React.createElement(props.Component, props.pageProps);
   var match = router.route;
-  if (match === "/examples") {
-    return JsxRuntime.jsxs(MainLayout.make, {
-                children: [
-                  JsxRuntime.jsx("h1", {
-                        children: "Examples Section",
-                        className: h1Class
-                      }),
-                  JsxRuntime.jsx("div", {
-                        children: content
-                      })
-                ]
-              });
-  } else {
-    return JsxRuntime.jsx(MainLayout.make, {
-                children: content
-              });
-  }
+  var tmp = match === "/examples" ? JsxRuntime.jsxs(JsxRuntime.Fragment, {
+          children: [
+            JsxRuntime.jsx("h1", {
+                  children: "Examples Section",
+                  className: h1Class
+                }),
+            JsxRuntime.jsx("div", {
+                  children: content
+                })
+          ]
+        }) : content;
+  return JsxRuntime.jsx(MainLayout.make, {
+              children: tmp
+            });
 }
 
 export {

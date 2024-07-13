@@ -47,9 +47,6 @@ let mainDivDivMainClass: Astroturf.rootClass = %raw("css`
 `");
 
 
-
-
-
 module Navigation = {
   @react.component
   let make = () =>
@@ -63,8 +60,16 @@ module Navigation = {
         </a>
       </Link>
       <div className=divClass>
-        <Link legacyBehavior=true href="/"> <a className=legacyAClass> {React.string("Home")} </a> </Link>
-        <Link legacyBehavior=true href="/examples"> <a className=legacyAClass> {React.string("Examples")} </a> </Link>
+        <Link legacyBehavior=true href="/">
+          <a className=legacyAClass>
+            {React.string("Home")}
+          </a>
+        </Link>
+        <Link legacyBehavior=true href="/examples">
+          <a className=legacyAClass>
+            {React.string("Examples")}
+          </a>
+        </Link>
         <a
           className=innerAClass
           target="_blank"
@@ -75,14 +80,15 @@ module Navigation = {
     </nav>
 }
 
-
-
 @react.component
 let make = (~children) => {
   let minWidth = ReactDOM.Style.make(~minWidth="20rem", ())
   <div style=minWidth className=mainDivClass>
     <div className=mainDivDivClass>
-      <Navigation /> <main className=mainDivDivMainClass> children </main>
+      <Navigation />
+      <main className=mainDivDivMainClass>
+        children
+      </main>
     </div>
   </div>
 }

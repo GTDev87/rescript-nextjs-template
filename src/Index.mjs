@@ -32,7 +32,7 @@ function $$default(param) {
                       className: h1Class
                     }),
                 JsxRuntime.jsx(Index$P, {
-                      children: " This is a simple template for a Next\n      project using ReScript & TailwindCSS."
+                      children: " This is a simple template for a Next project using ReScript & TailwindCSS."
                     }),
                 JsxRuntime.jsx("h2", {
                       children: "Quick Start",
